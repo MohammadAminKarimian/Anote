@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">خانه</string>
+    <string name="title_category">دسته بندی</string>
+    <string name="title_search">جستجو</string>
+    <string name="title_account">حساب</string>
+    <string name="tab_name_fields">رشته ها</string>
+    <string name="tab_name_schools">دانشگاه ها</string>
+    <string name="tab_name_lessons">درس ها</string>
+    <string name="app_name_second">... آنوت</string>
+    <string name="in_reading">در حال مطالعه</string>
+    <string name="last_handnotes">آخرین جزوه ها</string>
+    <string name="public_lessons">دروس عمومی</string>
+    <string name="app_name">آنوت</string>
+    <string name="open_navigation_bar">open navigation drawer</string>
+    <string name="close_navigation_bar">close navigation bar</string>
+    <string name="title_activity_login_start">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="menu_favorite_button_title">favorite</string>
+    <string name="menu_share_button_title">share</string>
+</resources>
