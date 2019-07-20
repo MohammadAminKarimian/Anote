@@ -7,11 +7,8 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -26,14 +23,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String LOG_TAG = "Tag_559898s4f89a4f";
+
     private static ArrayList<HandNote> handNotes = new ArrayList<>();
 
     private HomeFragment homeFragment;
     private CategoryFragment categoryFragment;
     private AccountFragment accountFragment;
     private SearchFragment searchFragment;
-    private ActionBar actionBar;
-    private Toolbar toolbar;
 
     public static ArrayList<HandNote> getHandNotes() {
         return handNotes;
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     private void initNavigationMenu() {
         NavigationView nav_view = (NavigationView) findViewById(R.id.nav_view);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open_navigation_bar, R.string.close_navigation_bar) {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,R.string.open_navigation_bar, R.string.close_navigation_bar) {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
             }
@@ -113,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchData(){
+
         handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.color.colorPrimaryLight));
         handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.color.colorSecondry));
         handNotes.add(new HandNote("شیمی", "جعفری", "شهید چمران", R.color.colorPrimaryLight));

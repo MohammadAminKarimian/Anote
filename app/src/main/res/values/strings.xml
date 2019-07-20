@@ -25,4 +25,14 @@
     <string name="login_failed">"Login failed"</string>
     <string name="menu_favorite_button_title">favorite</string>
     <string name="menu_share_button_title">share</string>
+    <string name="addpage_uploadfile_ET">آپلود فایل</string>
+    <string name="addpage_choosefile_button">انتخاب فایل</string>
+    <string name="university">دانشگاه</string>
+    <string name="university_example">دانشگاه چمران</string>
+    <string name="field">رشته</string>
+    <string name="field_example">علوم کامپیوتر</string>
+    <string name="choose_lesson">انتخاب درس</string>
+    <string name="example_lesson">ریاضی 2</string>
+    <string name="choose_teacher_tv">انتخاب استاد</string>
+    <string name="teacher_example">فروزش</string>
 </resources>

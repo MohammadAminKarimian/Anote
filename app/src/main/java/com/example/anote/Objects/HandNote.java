@@ -1,9 +1,14 @@
 package com.example.anote.Objects;
 
+
+import java.util.Date;
+
 public class HandNote {
 
-    private String name, teacher_name, university;
-    private int drawable;
+    private String name, teacher_name, university, lesson;
+    private int _id, drawable, field;
+    private Date upload_date, write_date;
+
 
     public HandNote(String name, String teacher_name, String university, int drawable) {
         this.name = name;
