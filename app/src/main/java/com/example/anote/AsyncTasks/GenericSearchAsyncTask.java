@@ -1,5 +1,6 @@
 package com.example.anote.AsyncTasks;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.text.TextUtils;
@@ -21,11 +22,11 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class FieldAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
+public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
 
     private WeakReference<Context> contextRef;
 
-    FieldAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
+    GenericSearchAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
 
     @Override
     protected ArrayList<String> doInBackground(URL... urls) {
@@ -40,15 +41,15 @@ public class FieldAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
     }
 
     @Override
-    protected void onPostExecute(ArrayList<String> fields) {
-        if(fields == null) return;
+    protected void onPostExecute(ArrayList<String> strings) {
+        if(strings == null) return;
 
         Context context = contextRef.get();
 
 //        RecyclerView fieldsRV = ((Activity)context).findViewById(R.id.fields_recycler_view);
 //        fieldsRV.setHasFixedSize(true);
 //        fieldsRV.setLayoutManager(new LinearLayoutManager(context));
-//        fieldsRV.setAdapter(new FieldsAdapter(context, fields));
+//        fieldsRV.setAdapter(new GenericSearchAdapter(context, strings));
 
     }
 
@@ -98,21 +99,22 @@ public class FieldAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
         return output.toString();
     }
 
+    // fix this to get attribute name from these to kind of tables : [teacher, university, field, lesson]
     private ArrayList<String> ExtractFromJson(String jsonResponse){
 
         if(TextUtils.isEmpty(jsonResponse)) return null;
 
-        ArrayList<String> fields = new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<>();
 
         try{
             JSONArray root = new JSONArray(jsonResponse);
             for(int i=0; i<root.length(); i++){
                 JSONObject field = root.getJSONObject(i);
-                String fieldName = field.getString("FIELDS");
+                String name = field.getString("FIELDS");
                 int _id = Integer.parseInt(field.getString("ID"));
-                fields.add(_id, fieldName);
+                strings.add(name);
             }
-            return fields;
+            return strings;
         } catch (JSONException e) {
             Log.e(MainActivity.LOG_TAG, "problem extracting jsonResponse");
         }
@@ -120,4 +122,5 @@ public class FieldAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
     }
 
 }
+
 

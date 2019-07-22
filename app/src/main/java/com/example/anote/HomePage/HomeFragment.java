@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.anote.Adapters.HomeAdapter;
 import com.example.anote.HandNotePageActivity;
 import com.example.anote.HomePage.AddPage.AddPage;
 import com.example.anote.MainActivity;

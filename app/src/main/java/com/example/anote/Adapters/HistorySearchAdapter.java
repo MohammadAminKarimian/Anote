@@ -1,4 +1,4 @@
-package com.example.anote.SearchPage;
+package com.example.anote.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,12 +14,11 @@ import java.util.ArrayList;
 
 public class HistorySearchAdapter extends RecyclerView.Adapter<HistorySearchAdapter.myViewHolder> {
 
-    private ArrayList<String> historyFeed, historyUsage;
+    private ArrayList<String> historyUsage;
     private Context context;
 
     public HistorySearchAdapter(Context context, ArrayList<String> historyFeed) {
         this.context = context;
-        this.historyFeed = historyFeed;
         this.historyUsage = new ArrayList<String>();
         this.historyUsage.addAll(historyFeed);
     }
@@ -53,7 +52,7 @@ public class HistorySearchAdapter extends RecyclerView.Adapter<HistorySearchAdap
 
     }
 
-    void filter(String s){
+    public void filter(String s){
         historyUsage.add(s);
         notifyDataSetChanged();
     }
