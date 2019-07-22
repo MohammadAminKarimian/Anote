@@ -3,10 +3,27 @@ package com.example.anote.AsyncTasks;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.support.design.widget.TextInputEditText;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.anote.Adapters.GenericSearchAdapter;
+import com.example.anote.Adapters.HistorySearchAdapter;
 import com.example.anote.MainActivity;
+import com.example.anote.R;
+import com.example.anote.SearchPage.SearchAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +43,7 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
 
     private WeakReference<Context> contextRef;
 
-    GenericSearchAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
+    public GenericSearchAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
 
     @Override
     protected ArrayList<String> doInBackground(URL... urls) {
@@ -46,11 +63,41 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
 
         Context context = contextRef.get();
 
-//        RecyclerView fieldsRV = ((Activity)context).findViewById(R.id.fields_recycler_view);
-//        fieldsRV.setHasFixedSize(true);
-//        fieldsRV.setLayoutManager(new LinearLayoutManager(context));
-//        fieldsRV.setAdapter(new GenericSearchAdapter(context, strings));
+        LinearLayout suggestions = ((Activity)context).findViewById(R.id.lyt_generic_fields_suggestion);
 
+        RecyclerView fieldsRV = ((Activity)context).findViewById(R.id.fields_list_suggestion_recycler_view);
+        fieldsRV.setHasFixedSize(true);
+        fieldsRV.setLayoutManager(new LinearLayoutManager(context));
+        final GenericSearchAdapter adapter = new GenericSearchAdapter(context, strings);
+        fieldsRV.setAdapter(adapter);
+
+        initSearchView(context, adapter, suggestions);
+
+    }
+
+    private void initSearchView(final Context context, final GenericSearchAdapter adapter,final LinearLayout suggestions){
+        TextInputEditText searchView = ((Activity)context).findViewById(R.id.fields_list_search_bar);
+        searchView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.equals("")){
+                    suggestions.setVisibility(View.GONE);
+                } else {
+                    suggestions.setVisibility(View.VISIBLE);
+                    adapter.filter(charSequence.toString(), suggestions);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     private String makeHttpRequest(URL url)throws IOException {
@@ -99,7 +146,7 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
         return output.toString();
     }
 
-    // fix this to get attribute name from these to kind of tables : [teacher, university, field, lesson]
+    // fix this to get attribute name from these kind of tables : [teacher, university, field, lesson]
     private ArrayList<String> ExtractFromJson(String jsonResponse){
 
         if(TextUtils.isEmpty(jsonResponse)) return null;
@@ -109,9 +156,8 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
         try{
             JSONArray root = new JSONArray(jsonResponse);
             for(int i=0; i<root.length(); i++){
-                JSONObject field = root.getJSONObject(i);
-                String name = field.getString("FIELDS");
-                int _id = Integer.parseInt(field.getString("ID"));
+                JSONObject object = root.getJSONObject(i);
+                String name = object.getString("NAME");
                 strings.add(name);
             }
             return strings;

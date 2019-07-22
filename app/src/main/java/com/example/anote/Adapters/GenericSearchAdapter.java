@@ -21,13 +21,13 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
     public GenericSearchAdapter(Context context, ArrayList<String> dataFeed){
         this.dataFeed = dataFeed;
         this.context= context;
-        this.dataUsage = new ArrayList<>();
+        this.dataUsage = new ArrayList<String>();
     }
 
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.search_suggestion_list_item, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.search_generic_list_item, viewGroup, false);
         return new GenericSearchAdapter.myViewHolder(view);
     }
 
@@ -42,7 +42,7 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
         return dataUsage.size();
     }
 
-    void filter(String charText, LinearLayout listOfSuggestions) {
+    public void filter(String charText, LinearLayout listOfSuggestions) {
         charText = charText.toLowerCase(Locale.getDefault());
         dataUsage.clear();
         if (charText.length() != 0) {

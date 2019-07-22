@@ -1,22 +1,28 @@
 package com.example.anote.HomePage.AddPage;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.example.anote.HomePage.AddPage.SelectLists.FieldList;
 import com.example.anote.R;
 
 public class AddPage extends AppCompatActivity {
+
+    View lyt_field ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_page);
         initToolbar();
-
+        initializtion();
     }
 
     @Override
@@ -33,6 +39,17 @@ public class AddPage extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initializtion(){
+        lyt_field = findViewById(R.id.lyt_field);
+
+        lyt_field.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(), FieldList.class));
+            }
+        });
     }
 
     private void initToolbar(){
