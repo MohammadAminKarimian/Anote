@@ -13,11 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <!--<activity android:name=".HomePage.AddPage.SelectLists.AddPageSearchList"></activity>-->
+        <activity android:name=".HomePage.AddPage.SelectLists.AddPageSearchList"></activity>
         <activity
             android:name=".HandNotePageActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".HomePage.AddPage.AddPage"
             android:parentActivityName=".MainActivity"
@@ -35,4 +34,3 @@
     </application>
 
 </manifest>
-
