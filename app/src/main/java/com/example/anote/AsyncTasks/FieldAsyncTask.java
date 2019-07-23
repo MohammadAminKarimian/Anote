@@ -25,7 +25,7 @@ public class FieldAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
 
     private WeakReference<Context> contextRef;
 
-    FieldAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
+    public FieldAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
 
     @Override
     protected ArrayList<String> doInBackground(URL... urls) {

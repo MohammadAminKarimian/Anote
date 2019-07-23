@@ -7,26 +7,16 @@ import android.os.AsyncTask;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.anote.Adapters.GenericSearchAdapter;
-import com.example.anote.Adapters.HistorySearchAdapter;
-import com.example.anote.HomePage.AddPage.AddPage;
-import com.example.anote.HomePage.AddPage.SelectLists.AddPageSearchList;
 import com.example.anote.MainActivity;
 import com.example.anote.R;
-import com.example.anote.SearchPage.SearchAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

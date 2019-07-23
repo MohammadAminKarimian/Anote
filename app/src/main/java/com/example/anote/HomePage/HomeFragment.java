@@ -3,6 +3,7 @@ package com.example.anote.HomePage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -60,12 +61,21 @@ public class HomeFragment extends Fragment {
         publicLessonsRV.setLayoutManager(new LinearLayoutManager(container.getContext(), LinearLayoutManager.HORIZONTAL, false));
         publicLessonsRV.setAdapter(homeAdapter);
 
+        final View parent_view = view.findViewById(R.id.coordinator_lyt);
         View floatButton = view.findViewById(R.id.home_float_button);
         floatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(v.getContext(), AddPage.class);
                 v.getContext().startActivity(mIntent);
+            }
+        });
+
+        floatButton.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Snackbar.make(parent_view, "FAB Add clicked", Snackbar.LENGTH_LONG).show();
+                return false;
             }
         });
 
