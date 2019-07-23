@@ -1,10 +1,14 @@
 package com.example.anote.HomePage;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,7 +26,6 @@ import com.example.anote.R;
 
 
 public class HomeFragment extends Fragment {
-
     public HomeFragment() {}
 
     @Override
@@ -84,11 +87,18 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+
     private void initToolbar(View view){
         AppCompatActivity parent = (AppCompatActivity) getActivity();
         Toolbar toolbar = view.findViewById(R.id.home_toolbar);
         parent.setSupportActionBar(toolbar);
         parent.getSupportActionBar().setTitle("ANOTE");
+
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ColorDrawable colorDrawable=new ColorDrawable();
+    }
 }

@@ -1,5 +1,8 @@
 package com.example.anote;
 
+import android.graphics.Color;
+import android.graphics.ColorSpace;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -65,10 +69,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         fetchData();
-
-        homeFragment = new HomeFragment();
+       homeFragment = new HomeFragment();
         categoryFragment = new CategoryFragment();
         accountFragment = new AccountFragment();
         searchFragment = new SearchFragment();
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     private void initNavigationMenu() {
         NavigationView nav_view = (NavigationView) findViewById(R.id.nav_view);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,R.string.open_navigation_bar, R.string.close_navigation_bar) {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, R.string.open_navigation_bar, R.string.close_navigation_bar) {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
             }
@@ -109,17 +111,17 @@ public class MainActivity extends AppCompatActivity {
 //        drawer.openDrawer(GravityCompat.START);
     }
 
-    private void fetchData(){
+    private void fetchData() {
 
-        handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.color.colorPrimaryLight));
-        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.color.colorSecondry));
-        handNotes.add(new HandNote("شیمی", "جعفری", "شهید چمران", R.color.colorPrimaryLight));
-        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.color.colorSecondry));
-        handNotes.add(new HandNote("آنالیز عددی", "صالح نژاد", "شهید چمران", R.color.colorPrimaryLight));
-        handNotes.add(new HandNote("سیستم عامل", "طاهری", "شهید چمران", R.color.colorSecondry));
-        handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.color.colorPrimaryLight));
-        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.color.colorSecondry));
-        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.color.colorPrimaryLight));
+        handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("شیمی", "جعفری", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("آنالیز عددی", "صالح نژاد", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("سیستم عامل", "طاهری", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.drawable.ic_mathematical_icon));
     }
 
 }
