@@ -22,11 +22,11 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
+public class SearchAsyncTask extends AsyncTask<URL, Void, ArrayList<String>> {
 
     private WeakReference<Context> contextRef;
 
-    GenericSearchAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
+    SearchAsyncTask(Context context) { contextRef = new WeakReference<>(context); }
 
     @Override
     protected ArrayList<String> doInBackground(URL... urls) {
