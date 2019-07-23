@@ -2,6 +2,7 @@ package com.example.anote.AsyncTasks;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.anote.Adapters.GenericSearchAdapter;
 import com.example.anote.Adapters.HistorySearchAdapter;
+import com.example.anote.HomePage.AddPage.AddPage;
+import com.example.anote.HomePage.AddPage.SelectLists.AddPageSearchList;
 import com.example.anote.MainActivity;
 import com.example.anote.R;
 import com.example.anote.SearchPage.SearchAdapter;
@@ -61,7 +64,7 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
     protected void onPostExecute(ArrayList<String> strings) {
         if(strings == null) return;
 
-        Context context = contextRef.get();
+        final Context context = contextRef.get();
 
         LinearLayout suggestions = ((Activity)context).findViewById(R.id.lyt_generic_fields_suggestion);
 
@@ -70,6 +73,16 @@ public class GenericSearchAsyncTask extends AsyncTask<URL, Void, ArrayList<Strin
         fieldsRV.setLayoutManager(new LinearLayoutManager(context));
         final GenericSearchAdapter adapter = new GenericSearchAdapter(context, strings);
         fieldsRV.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new GenericSearchAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, String str, int position) {
+                Intent intent = new Intent();
+                intent.putExtra("name", str);
+                ((Activity) context).setResult(Activity.RESULT_OK,intent);
+                ((Activity) context).finish();
+            }
+        });
 
         initSearchView(context, adapter, suggestions);
 

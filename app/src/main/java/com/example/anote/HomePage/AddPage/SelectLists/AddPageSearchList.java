@@ -10,9 +10,9 @@ import com.example.anote.R;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FieldList extends AppCompatActivity {
+public class AddPageSearchList extends AppCompatActivity {
 
-    public String url = "https://apianote.000webhostapp.com/select.php";
+    public String url;
 
     public final String LOG_TAG = this.getClass().getName();
 
@@ -20,6 +20,8 @@ public class FieldList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generic_list);
+
+        url = getIntent().getStringExtra("URL");
 
         GenericSearchAsyncTask asyncTask = new GenericSearchAsyncTask(this);
         URL Url = createUrl(url);

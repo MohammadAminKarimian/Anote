@@ -18,7 +18,7 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/addpage_toolbar"
+                android:id="@+id/add_page_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -51,6 +51,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/add_page_lyt_university"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal">
@@ -65,14 +66,13 @@
                 android:text="@string/university"/>
 
             <TextView
-                android:id="@+id/choosed_university_"
+                android:id="@+id/add_page_selected_university"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:textSize="18sp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="@string/university_example"/>
+                android:textColor="@android:color/holo_blue_dark"/>
 
         </LinearLayout>
 
@@ -82,7 +82,7 @@
             style="@style/divider"/>
 
         <LinearLayout
-            android:id="@+id/lyt_field"
+            android:id="@+id/add_page_lyt_field"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal">
@@ -97,13 +97,13 @@
                 android:text="@string/field"/>
 
             <TextView
+                android:id="@+id/add_page_selected_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:textSize="18sp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="@string/field_example"/>
+                android:textColor="@android:color/holo_blue_dark"/>
 
         </LinearLayout>
 
@@ -113,6 +113,7 @@
             style="@style/divider"/>
 
         <LinearLayout
+            android:id="@+id/add_page_lyt_lesson"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal">
@@ -127,13 +128,13 @@
                 android:text="@string/choose_lesson"/>
 
             <TextView
+                android:id="@+id/add_page_selected_lesson"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:textSize="18sp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="@string/example_lesson"/>
+                android:textColor="@android:color/holo_blue_dark"/>
 
         </LinearLayout>
 
@@ -143,6 +144,7 @@
             style="@style/divider"/>
 
         <LinearLayout
+            android:id="@+id/add_page_lyt_teacher"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal">
@@ -157,13 +159,13 @@
                 android:text="@string/choose_teacher_tv"/>
 
             <TextView
+                android:id="@+id/add_page_selected_teacher"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:textSize="18sp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="@string/teacher_example"/>
+                android:textColor="@android:color/holo_blue_dark" />
 
         </LinearLayout>
 

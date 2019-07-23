@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.example.anote.R;
 
 import java.util.ArrayList;
@@ -17,6 +18,16 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
 
     private ArrayList<String> dataFeed, dataUsage;
     private Context context;
+
+    private OnItemClickListener mOnItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, String str, int position);
+    }
+
+    public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
+        this.mOnItemClickListener = mItemClickListener;
+    }
 
     public GenericSearchAdapter(Context context, ArrayList<String> dataFeed){
         this.dataFeed = dataFeed;
@@ -32,9 +43,17 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
-        String str = dataUsage.get(i);
+    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, final int i) {
+        final String str = dataUsage.get(i);
         myViewHolder.name.setText(str);
+
+        myViewHolder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mOnItemClickListener != null)
+                    mOnItemClickListener.onItemClick(view, str, i);
+            }
+        });
     }
 
     @Override
@@ -58,11 +77,13 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
 
     static class myViewHolder extends RecyclerView.ViewHolder {
 
+        View view;
         TextView name;
 
         myViewHolder(View itemView){
             super(itemView);
             this.name = itemView.findViewById(R.id.search_generic_list_item_name);
+            this.view = itemView.findViewById(R.id.lyt_search_generic_list_item);
         }
 
     }
