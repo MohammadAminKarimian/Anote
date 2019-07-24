@@ -2,6 +2,7 @@ package com.example.anote.HomePage.AddPage;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,17 +19,20 @@ import com.example.anote.R;
 
 public class AddPage extends AppCompatActivity {
 
-    View lyt_field, lyt_lesson, lyt_teacher, lyt_university ;
-    TextView selected_field, selected_lesson, selected_teacher, selected_university;
+    View lyt_field, lyt_lesson, lyt_teacher, lyt_university;
+    TextView selected_field, selected_lesson, selected_teacher, selected_university,
+            uploadFile, university, field, lessen, teacher;
+    Button uploadFileBtn, sendBtn;
+    Typeface typeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_page);
-
+        typeface = Typeface.createFromAsset(getAssets(),
+                "fonts/IRANSansMobile(FaNum)_Light.ttf");
         initToolbar();
         initialization();
-
 //        if(getIntent().getStringExtra("type") != null){
 //            switch (getIntent().getStringExtra("type")){
 //                case "Field":
@@ -45,15 +50,19 @@ public class AddPage extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
-        switch(requestCode){
+        switch (requestCode) {
             case 1:
-                selected_field.setText(intent.getStringExtra("name"));break;
+                selected_field.setText(intent.getStringExtra("name"));
+                break;
             case 2:
-                selected_lesson.setText(intent.getStringExtra("name"));break;
+                selected_lesson.setText(intent.getStringExtra("name"));
+                break;
             case 3:
-                selected_teacher.setText(intent.getStringExtra("name"));break;
+                selected_teacher.setText(intent.getStringExtra("name"));
+                break;
             case 4:
-                selected_university.setText(intent.getStringExtra("name"));break;
+                selected_university.setText(intent.getStringExtra("name"));
+                break;
             case Activity.RESULT_CANCELED:
 
         }
@@ -75,17 +84,34 @@ public class AddPage extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void initialization(){
+    private void initialization() {
+        uploadFile = findViewById(R.id.add_page_upload_file_tv);
+        uploadFile.setTypeface(typeface);
+        university = findViewById(R.id.add_page_university_tv);
+        university.setTypeface(typeface);
+        field = findViewById(R.id.add_page_field_tv);
+        field.setTypeface(typeface);
+        lessen = findViewById(R.id.add_page_lesson_tv);
+        lessen.setTypeface(typeface);
+        teacher = findViewById(R.id.add_page_teacher_tv);
+        teacher.setTypeface(typeface);
+        uploadFileBtn = findViewById(R.id.add_page_upload_file_btn);
+        uploadFileBtn.setTypeface(typeface);
+        sendBtn = findViewById(R.id.add_page_send_btn);
+        sendBtn.setTypeface(typeface);
         lyt_field = findViewById(R.id.add_page_lyt_field);
         lyt_lesson = findViewById(R.id.add_page_lyt_lesson);
         lyt_teacher = findViewById(R.id.add_page_lyt_teacher);
         lyt_university = findViewById(R.id.add_page_lyt_university);
         selected_field = findViewById(R.id.add_page_selected_field);
+        selected_field.setTypeface(typeface);
         selected_lesson = findViewById(R.id.add_page_selected_lesson);
+        selected_lesson.setTypeface(typeface);
         selected_teacher = findViewById(R.id.add_page_selected_teacher);
+        selected_teacher.setTypeface(typeface);
         selected_university = findViewById(R.id.add_page_selected_university);
-
-        lyt_field.setOnClickListener(new View.OnClickListener(){
+        selected_university.setTypeface(typeface);
+        lyt_field.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), AddPageSearchList.class);
@@ -122,7 +148,7 @@ public class AddPage extends AppCompatActivity {
         });
     }
 
-    private void initToolbar(){
+    private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.add_page_toolbar);
 //        toolbar.setNavigationIcon(R.drawable.ic_round_more_vert_24px);
 //        toolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));

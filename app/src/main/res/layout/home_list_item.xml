@@ -6,17 +6,20 @@
     android:id="@+id/home_list_item"
     android:layout_width="148dp"
     android:layout_height="@dimen/home_horizontal_list_height"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
 
     <android.support.v7.widget.CardView
         android:id="@+id/parent_view"
-        android:layout_margin="8dp"
-        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/white"
         android:clickable="true"
+        app:cardCornerRadius="4dp"
         android:elevation="1dp"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
@@ -24,16 +27,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
+            android:layout_height="match_parent">
 
             <TextView
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
                 android:id="@+id/home_list_item_name"
                 style="@style/ptsReg"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -44,6 +46,9 @@
             <TextView
                 android:id="@+id/home_list_item_teacher_name"
                 style="@style/ptsReg"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="26dp"
                 android:layout_below="@+id/home_list_item_name"
@@ -54,8 +59,8 @@
 
             <ImageView
                 android:id="@+id/home_list_item_Image"
-                android:layout_width="96dp"
-                android:layout_height="80dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
 
                 android:layout_below="@id/home_list_item_teacher_name"
                 android:layout_centerHorizontal="true"
@@ -67,15 +72,17 @@
             <android.support.design.chip.Chip
                 android:id="@+id/university_chip"
                 style="@style/Widget.MaterialComponents.Chip.Action"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/home_list_item_Image"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp"
                 android:text="دانشگاه"
+                app:chipIconSize="5dp"
                 android:textAlignment="center"
-                android:textSize="12sp">
+                android:textSize="20sp"
+                >
 
             </android.support.design.chip.Chip>
         </RelativeLayout>

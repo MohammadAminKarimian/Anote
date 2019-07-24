@@ -1,6 +1,7 @@
 package com.example.anote;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,8 +16,9 @@ import com.example.anote.Objects.HandNote;
 
 public class HandNotePageActivity extends AppCompatActivity {
 
-    TextView name, teacher_name, university;
+    TextView name, teacher_name, university, size, date;
     ImageView drawable;
+    Typeface typeface;
 
     HandNote handNote;
 
@@ -26,7 +28,8 @@ public class HandNotePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hand_note_page);
 
         Intent intent = getIntent();
-
+        typeface = Typeface.createFromAsset(getAssets(),
+                "fonts/IRANSansMobile(FaNum).ttf");
         handNote = new HandNote(
                 intent.getStringExtra("name"),
                 intent.getStringExtra("teacher_name"),
@@ -39,19 +42,32 @@ public class HandNotePageActivity extends AppCompatActivity {
 
     }
 
-    private void initComponent(){
+    private void initComponent() {
         name = findViewById(R.id.handnote_page_name_tv);
         teacher_name = findViewById(R.id.handnote_page_teacher_name_tv);
         university = findViewById(R.id.handnote_page_university_tv);
         drawable = findViewById(R.id.handnote_page_drawable_iv);
+        date = findViewById(R.id.handnote_page_date);
+        size = findViewById(R.id.handnote_page_size_tv);
 
+        date.setText("97");
+        size.setText("15");
         name.setText(handNote.getName());
+
         teacher_name.setText(handNote.getTeacher_name());
         university.setText(handNote.getUniversity());
         drawable.setImageResource(handNote.getDrawable());
+        //just fot test
+
+
+        name.setTypeface(typeface);
+        university.setTypeface(typeface);
+        date.setTypeface(typeface);
+        size.setTypeface(typeface);
+        teacher_name.setTypeface(typeface);
     }
 
-    private void initToolbar(){
+    private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.handnote_page_toolbar);
         this.setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
@@ -67,7 +83,7 @@ public class HandNotePageActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.menu_favorite_button:
                 Toast.makeText(this, "favorite", Toast.LENGTH_SHORT).show();
             case R.id.menu_share_button:

@@ -50,11 +50,14 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
     @Override
     public void onBindViewHolder(@NonNull final myViewHolder myViewHolder, final int i) {
         final HandNote object = handNotes.get(i);
+        int[] androidColors = context.getResources().getIntArray(R.array.androidcolors);
+        int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
         myViewHolder.name.setText(object.getName());
         myViewHolder.name.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.teacher_name.setText(object.getTeacher_name());
         myViewHolder.teacher_name.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.image.setImageResource(object.getDrawable());
+        myViewHolder.image.setColorFilter(randomAndroidColor);
         myViewHolder.university.setText(object.getUniversity());
         myViewHolder.university.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
