@@ -16,8 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.anote.Adapters.HistorySearchAdapter;
+import com.example.anote.Adapters.SearchAdapter;
 import com.example.anote.MainActivity;
 import com.example.anote.R;
+import com.example.anote.Adapters.*;
 
 import java.util.ArrayList;
 

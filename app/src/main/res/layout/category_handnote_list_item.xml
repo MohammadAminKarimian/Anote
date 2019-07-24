@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?listPreferredItemHeight"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:layoutDirection="rtl">
+
+    <ImageView
+        android:id="@+id/category_handnote_list_item_image_IV"
+        android:layout_width="84dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:tint="@color/grey_40"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/category_handnote_list_item_name_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="name name name name name name"
+        app:layout_constraintRight_toLeftOf="@id/category_handnote_list_item_image_IV"
+        app:layout_constraintBottom_toTopOf="@id/category_handnote_list_item_teacher_name_TV"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/category_handnote_list_item_teacher_name_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="type type type type type"
+        app:layout_constraintRight_toLeftOf="@id/category_handnote_list_item_image_IV"
+        app:layout_constraintTop_toBottomOf="@id/category_handnote_list_item_name_TV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/grey_40"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <TextView
+        android:id="@+id/category_handnote_list_item_university_name_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="type type type type type"
+        app:layout_constraintRight_toLeftOf="@id/category_handnote_list_item_teacher_name_TV"
+        app:layout_constraintTop_toBottomOf="@id/category_handnote_list_item_name_TV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/grey_40"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/grey_10"/>
+
+
+</android.support.constraint.ConstraintLayout>

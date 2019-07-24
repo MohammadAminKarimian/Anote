@@ -1,4 +1,4 @@
-package com.example.anote.SearchPage;
+package com.example.anote.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHold
     private ArrayList<HandNote> dataUsage, dataFeed;
     private Context context;
 
-    SearchAdapter(Context context, ArrayList<HandNote> dataFeed){
+    public SearchAdapter(Context context, ArrayList<HandNote> dataFeed){
         this.dataFeed = dataFeed;
         this.context = context;
         this.dataUsage = new ArrayList<HandNote>();
@@ -47,7 +48,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHold
         return dataUsage.size();
     }
 
-    void filter(String charText, LinearLayout listOfSuggestions) {
+    public void filter(String charText, LinearLayout listOfSuggestions) {
         charText = charText.toLowerCase(Locale.getDefault());
         dataUsage.clear();
         if (charText.length() != 0) {

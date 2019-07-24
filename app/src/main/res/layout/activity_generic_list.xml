@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:textDirection="rtl"
                 android:layout_marginEnd="18dp"
+                android:maxLines="1"
                 android:hint="جستجو..." />
         </RelativeLayout>
     </android.support.design.widget.TextInputLayout>
