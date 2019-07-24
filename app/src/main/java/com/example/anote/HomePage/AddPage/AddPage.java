@@ -45,18 +45,21 @@ public class AddPage extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
-        switch(requestCode){
-            case 1:
-                selected_field.setText(intent.getStringExtra("name"));break;
-            case 2:
-                selected_lesson.setText(intent.getStringExtra("name"));break;
-            case 3:
-                selected_teacher.setText(intent.getStringExtra("name"));break;
-            case 4:
-                selected_university.setText(intent.getStringExtra("name"));break;
-            case Activity.RESULT_CANCELED:
+        if(resultCode != 0){
+            switch(requestCode){
+                case 1:
+                    selected_field.setText(intent.getStringExtra("name"));break;
+                case 2:
+                    selected_lesson.setText(intent.getStringExtra("name"));break;
+                case 3:
+                    selected_teacher.setText(intent.getStringExtra("name"));break;
+                case 4:
+                    selected_university.setText(intent.getStringExtra("name"));break;
+                case Activity.RESULT_CANCELED:
 
+            }
         }
+
     }
 
     @Override

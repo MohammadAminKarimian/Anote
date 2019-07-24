@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="?android:listPreferredItemHeightLarge"
     android:layout_width="match_parent"
+    android:id="@+id/category_list_item_parentView"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_marginBottom="16dp"
@@ -11,7 +12,7 @@
         android:id="@+id/category_list_item_IV"
         android:layout_width="84dp"
         android:layout_height="match_parent"
-        android:src="@color/colorAccent"/>
+        android:src="@color/colorSecondary"/>
 
     <TextView
         android:id="@+id/category_list_item_TV"

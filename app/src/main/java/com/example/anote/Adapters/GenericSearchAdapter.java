@@ -43,7 +43,7 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final myViewHolder myViewHolder, final int i) {
         final String str = dataUsage.get(i);
         myViewHolder.name.setText(str);
 
@@ -51,7 +51,7 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
             @Override
             public void onClick(View view) {
                 if(mOnItemClickListener != null)
-                    mOnItemClickListener.onItemClick(view, str, i);
+                    mOnItemClickListener.onItemClick(view, str, myViewHolder.getAdapterPosition());
             }
         });
     }
@@ -75,7 +75,7 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
         notifyDataSetChanged();
     }
 
-    static class myViewHolder extends RecyclerView.ViewHolder {
+     static class myViewHolder extends RecyclerView.ViewHolder {
 
         View view;
         TextView name;

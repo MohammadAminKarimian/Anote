@@ -29,6 +29,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
         this.dataUsage = dataFeed;
     }
 
+    private OnItemClickListener mOnItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, String str, int position);
+    }
+
+    public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
+        this.mOnItemClickListener = mItemClickListener;
+    }
+
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -37,10 +47,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
-        String str = dataUsage.get(i);
+    public void onBindViewHolder(@NonNull final myViewHolder myViewHolder, int i) {
+        final String str = dataUsage.get(i);
         myViewHolder.name.setText(str);
-        myViewHolder.drawable.setImageResource(R.color.colorAccent);
+        myViewHolder.drawable.setImageResource(R.color.colorSecondary);
+
+        myViewHolder.lyt_parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mOnItemClickListener != null)
+                    mOnItemClickListener.onItemClick(view, str, myViewHolder.getAdapterPosition());
+            }
+        });
     }
 
     @Override
@@ -66,11 +84,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
 
         TextView name;
         ImageView drawable;
+        View lyt_parent;
 
         myViewHolder(View itemView){
             super(itemView);
             name = itemView.findViewById(R.id.category_list_item_TV);
             drawable = itemView.findViewById(R.id.category_list_item_IV);
+            lyt_parent = itemView.findViewById(R.id.category_list_item_parentView);
         }
 
     }
