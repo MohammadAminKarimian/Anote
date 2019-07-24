@@ -5,6 +5,7 @@
     <color name="colorPrimaryLight">#FFFFFF</color>
     <color name="colorSecondaryLight">#63A4FF</color>
     <color name="colorSecondary">#1976D2</color>
+    <color name="colorAccent">#1976D2</color>
     <color name="colorDark">#3F51B5</color>
     <color name="overlay_dark_10">#1A000000</color>
     <color name="overlay_dark_20">#33000000</color>
