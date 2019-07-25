@@ -1,6 +1,7 @@
 package com.example.anote.CategoryPage;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.anote.Adapters.CategoryAdapter;
 import com.example.anote.CategoryPage.HandNoteList.HandNoteList;
@@ -33,21 +35,18 @@ public class CategoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_category, container, false);
 
-        initToolbar(view);
+//        initToolbar(view);
         fetchData();
         CategoryAdapter adapter = initComponent(view);
-
-
-
         return view;
     }
 
-    private void initToolbar(View view){
-        AppCompatActivity parent = (AppCompatActivity) getActivity();
-        Toolbar toolbar = view.findViewById(R.id.category_toolbar);
-        parent.setSupportActionBar(toolbar);
-        parent.getSupportActionBar().setTitle("ANOTE");
-    }
+//    private void initToolbar(View view){
+//        AppCompatActivity parent = (AppCompatActivity) getActivity();
+//        Toolbar toolbar = view.findViewById(R.id.category_toolbar);
+//        parent.setSupportActionBar(toolbar);
+//        parent.getSupportActionBar().setTitle("ANOTE");
+//    }
 
     private CategoryAdapter initComponent(View view){
         AppCompatActivity parent = (AppCompatActivity) getActivity();

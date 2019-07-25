@@ -22,8 +22,6 @@
 
     <color name="transparent">#00FFFFFF</color>
     <color name="toolbar_color">#F5F5F5</color>
-    <color name="a1">#F44336</color>
-    <color name="a2">#E91E63</color>
     <color name="a3">#9C27B0</color>
     <color name="a4">#673AB7</color>
     <color name="a5">#3F51B5</color>
@@ -32,14 +30,9 @@
     <color name="a8">#009688</color>
     <color name="a9">#4CAF50</color>
     <color name="a10">#8BC34A</color>
-    <color name="a11">#CDDC39</color>
-    <color name="a12">#FFEB3B</color>
-    <color name="a13">#FF9800</color>
-    <color name="a14">#FF5722</color>
 
     <integer-array name="androidcolors">
-        <item>@color/a1</item>
-        <item>@color/a2</item>
+
         <item>@color/a3</item>
         <item>@color/a4</item>
         <item>@color/a5</item>
@@ -48,10 +41,7 @@
         <item>@color/a8</item>
         <item>@color/a9</item>
         <item>@color/a10</item>
-        <item>@color/a11</item>
-        <item>@color/a12</item>
-        <item>@color/a13</item>
-        <item>@color/a14</item>
+
 
     </integer-array>
 </resources>

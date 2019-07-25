@@ -1,6 +1,7 @@
 package com.example.anote.Adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
@@ -15,12 +16,14 @@ import com.example.anote.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myViewHolder> {
 
 
     private ArrayList<String> dataUsage, dataFeed;
     private Context context;
+
 
     public CategoryAdapter(Context context, ArrayList<String> dataFeed){
         this.dataFeed = dataFeed;
@@ -49,9 +52,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
     @Override
     public void onBindViewHolder(@NonNull final myViewHolder myViewHolder, int i) {
         final String str = dataUsage.get(i);
-        myViewHolder.name.setText(str);
-        myViewHolder.drawable.setImageResource(R.color.colorSecondary);
+        int[] androidColors = context.getResources().getIntArray(R.array.androidcolors);
+        int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
 
+        myViewHolder.name.setText(str);
+        myViewHolder.name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.drawable.setColorFilter(randomAndroidColor);
         myViewHolder.lyt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,13 +87,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
     }
 
     static class myViewHolder extends RecyclerView.ViewHolder{
-
+        Typeface typeFace;
         TextView name;
         ImageView drawable;
         View lyt_parent;
 
         myViewHolder(View itemView){
             super(itemView);
+            typeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
+                    "fonts/IRANSansMobile(FaNum).ttf");
             name = itemView.findViewById(R.id.category_list_item_TV);
             drawable = itemView.findViewById(R.id.category_list_item_IV);
             lyt_parent = itemView.findViewById(R.id.category_list_item_parentView);

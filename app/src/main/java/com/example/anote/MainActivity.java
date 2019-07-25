@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fetchData();
-       homeFragment = new HomeFragment();
+        homeFragment = new HomeFragment();
         categoryFragment = new CategoryFragment();
         accountFragment = new AccountFragment();
         searchFragment = new SearchFragment();
@@ -114,14 +114,14 @@ public class MainActivity extends AppCompatActivity {
     private void fetchData() {
 
         handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("شیمی", "جعفری", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_statistics));
+        handNotes.add(new HandNote("شیمی", "جعفری", "شهید چمران", R.drawable.ic_database));
         handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("آنالیز عددی", "صالح نژاد", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("سیستم عامل", "طاهری", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("آنالیز عددی", "صالح نژاد", "شهید چمران", R.drawable.ic_statistics));
+        handNotes.add(new HandNote("سیستم عامل", "طاهری", "شهید چمران", R.drawable.ic_database));
         handNotes.add(new HandNote("مهندسی اینترنت", "فروزش", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_mathematical_icon));
-        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.drawable.ic_mathematical_icon));
+        handNotes.add(new HandNote("ریاضی 2", "کاظمی فر", "شهید چمران", R.drawable.ic_statistics));
+        handNotes.add(new HandNote("برنامه نویسی", "صفار زاده", "شهید چمران", R.drawable.ic_database));
     }
 
 }

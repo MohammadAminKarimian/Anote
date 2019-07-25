@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="?android:listPreferredItemHeightLarge"
-    android:layout_width="match_parent"
-    android:id="@+id/category_list_item_parentView"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_marginBottom="16dp"
+    android:id="@+id/category_list_item_parentView"
+    android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeightLarge"
+    android:clickable="true"
+    android:focusable="true"
     android:layoutDirection="rtl">
+
 
     <ImageView
         android:id="@+id/category_list_item_IV"
         android:layout_width="84dp"
         android:layout_height="match_parent"
-        android:src="@color/colorSecondary"/>
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_mathematical_icon" />
 
     <TextView
         android:id="@+id/category_list_item_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="نام درس"
-        android:textSize="24sp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginRight="24sp"/>
+        android:layout_toEndOf="@id/category_list_item_IV"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        tools:text="نام درس" />
 
-</LinearLayout>
+
+    <View
+        style="@style/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignStart="@+id/category_list_item_TV"
+        android:layout_alignParentBottom="true"
+        android:background="#E3E3E3" />
+</RelativeLayout>

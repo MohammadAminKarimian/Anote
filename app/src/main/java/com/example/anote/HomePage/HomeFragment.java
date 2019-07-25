@@ -3,6 +3,7 @@ package com.example.anote.HomePage;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.anote.Adapters.HomeAdapter;
 import com.example.anote.HandNotePageActivity;
@@ -26,13 +28,26 @@ import com.example.anote.R;
 
 
 public class HomeFragment extends Fragment {
-    public HomeFragment() {}
+    public HomeFragment() {
+    }
 
+    Typeface typeface;
+    TextView inReading, lastHandNotes, public_lessons;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        typeface = Typeface.createFromAsset(getContext().getAssets(),
+                "fonts/IRANSansMobile(FaNum)_Medium.ttf");
+        inReading=view.findViewById(R.id.in_reading);
+        inReading.setTypeface(typeface);
+        lastHandNotes=view.findViewById(R.id.last_handnotes);
+        lastHandNotes.setTypeface(typeface);
+        public_lessons=view.findViewById(R.id.public_lessons);
+        public_lessons.setTypeface(typeface);
+
 
         RecyclerView inReadingRV = view.findViewById(R.id.list_in_reading);
         RecyclerView latestHandnotesRV = view.findViewById(R.id.list_last_handnotes);
@@ -89,7 +104,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void initToolbar(View view){
+    private void initToolbar(View view) {
         AppCompatActivity parent = (AppCompatActivity) getActivity();
         Toolbar toolbar = view.findViewById(R.id.home_toolbar);
         parent.setSupportActionBar(toolbar);
@@ -100,6 +115,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        ColorDrawable colorDrawable=new ColorDrawable();
+        ColorDrawable colorDrawable = new ColorDrawable();
     }
 }

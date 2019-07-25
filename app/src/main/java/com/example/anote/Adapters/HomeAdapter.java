@@ -58,8 +58,8 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
         myViewHolder.teacher_name.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.image.setImageResource(object.getDrawable());
         myViewHolder.image.setColorFilter(randomAndroidColor);
-        myViewHolder.university.setText(object.getUniversity());
-        myViewHolder.university.setTypeface(myViewHolder.nameTypeFace);
+//        myViewHolder.university.setText(object.getUniversity());
+//        myViewHolder.university.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +80,7 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
         Typeface nameTypeFace;
         CardView cardView;
         View view;
-        Chip university;
+//        Chip university;
         TextView name, teacher_name;
         ImageView image;
 
@@ -89,13 +89,12 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
 
             nameTypeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
                     "fonts/IRANSansMobile(FaNum).ttf");
-            this.view = itemView.findViewById(R.id.parent_view);
             this.name = itemView.findViewById(R.id.home_list_item_name);
             this.teacher_name = itemView.findViewById(R.id.home_list_item_teacher_name);
             this.image = itemView.findViewById(R.id.home_list_item_Image);
             this.view=itemView.findViewById(R.id.home_list_item);
             this.cardView=itemView.findViewById(R.id.parent_view);
-            this.university=itemView.findViewById(R.id.university_chip);
+//            this.university=itemView.findViewById(R.id.university_chip);
         }
 
     }
