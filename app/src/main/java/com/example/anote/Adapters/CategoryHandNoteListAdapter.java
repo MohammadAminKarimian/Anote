@@ -1,6 +1,7 @@
 package com.example.anote.Adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,9 +36,12 @@ public class CategoryHandNoteListAdapter extends RecyclerView.Adapter<CategoryHa
     public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
         HandNote object = dataFeed.get(i);
         myViewHolder.name.setText(object.getName());
+        myViewHolder.name.setTypeface(myViewHolder.typeFace);
         myViewHolder.teacher_name.setText(object.getTeacher_name());
+        myViewHolder.teacher_name.setTypeface(myViewHolder.typeFace);
         myViewHolder.university_name.setText(object.getUniversity());
-        myViewHolder.drawable.setImageResource(R.color.colorSecondary);
+        myViewHolder.university_name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.drawable.setImageResource(R.drawable.ic_database);
     }
 
     @Override
@@ -49,9 +53,12 @@ public class CategoryHandNoteListAdapter extends RecyclerView.Adapter<CategoryHa
 
         TextView name, teacher_name, university_name;
         ImageView drawable;
+        Typeface typeFace;
 
         myViewHolder(View itemView){
             super(itemView);
+            this.typeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
+                    "fonts/IRANSansMobile(FaNum).ttf");
             this.name = itemView.findViewById(R.id.category_handnote_list_item_name_TV);
             this.teacher_name = itemView.findViewById(R.id.category_handnote_list_item_teacher_name_TV);
             this.university_name = itemView.findViewById(R.id.category_handnote_list_item_university_name_TV);

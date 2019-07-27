@@ -31,8 +31,9 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
     }
 
-    Typeface typeface;
-    TextView inReading, lastHandNotes, public_lessons;
+    Typeface typeface,typefaceMedium;
+    TextView inReading, lastHandNotes, public_lessons,inReading_more, lastHandNotes_more,
+            public_lessons_more;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -40,6 +41,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         typeface = Typeface.createFromAsset(getContext().getAssets(),
+                "fonts/IRANSansMobile(FaNum).ttf");
+        typefaceMedium = Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/IRANSansMobile(FaNum)_Medium.ttf");
         inReading=view.findViewById(R.id.in_reading);
         inReading.setTypeface(typeface);
@@ -47,6 +50,13 @@ public class HomeFragment extends Fragment {
         lastHandNotes.setTypeface(typeface);
         public_lessons=view.findViewById(R.id.public_lessons);
         public_lessons.setTypeface(typeface);
+
+        inReading_more=view.findViewById(R.id.in_reading_more);
+        inReading_more.setTypeface(typefaceMedium);
+        lastHandNotes_more=view.findViewById(R.id.last_handnotes_more);
+        lastHandNotes_more.setTypeface(typefaceMedium);
+        public_lessons_more=view.findViewById(R.id.public_lessons_more);
+        public_lessons_more.setTypeface(typefaceMedium);
 
 
         RecyclerView inReadingRV = view.findViewById(R.id.list_in_reading);

@@ -14,7 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryLight">
 
             <android.support.design.widget.AppBarLayout
                 android:id="@+id/addpage_toolbar_appbarlayout"
@@ -91,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
-                    android:layout_weight="3"
+                    android:layout_weight="5"
                     android:text="@string/university"
                     android:textColor="@android:color/black"
                     android:textSize="20sp" />
@@ -112,9 +113,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="#F9F9F9"
                     android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:tint="@color/colorPrimaryDark" />
+                    />
             </LinearLayout>
 
             <View
@@ -204,9 +204,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="2"
+                    android:textAlignment="textEnd"
                     android:text="انتخاب"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textDirection="ltr"
                     android:textSize="18sp" />
 
                 <ImageButton
@@ -244,6 +244,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_weight="3"
                     android:text="@string/choose_teacher_tv"
+
                     android:textColor="@android:color/black"
                     android:textSize="20sp" />
 

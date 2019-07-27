@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,8 @@ public class HandNotePageActivity extends AppCompatActivity {
 
     TextView name, teacher_name, university, size, date;
     ImageView drawable;
-    Typeface typeface;
+    Button button;
+    Typeface typeface,typefaceLight;
 
     HandNote handNote;
 
@@ -30,6 +32,9 @@ public class HandNotePageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         typeface = Typeface.createFromAsset(getAssets(),
                 "fonts/IRANSansMobile(FaNum).ttf");
+        typefaceLight = Typeface.createFromAsset(getAssets(),
+                "fonts/IRANSansMobile(FaNum)_Light.ttf");
+
         handNote = new HandNote(
                 intent.getStringExtra("name"),
                 intent.getStringExtra("teacher_name"),
@@ -49,7 +54,7 @@ public class HandNotePageActivity extends AppCompatActivity {
         drawable = findViewById(R.id.handnote_page_drawable_iv);
         date = findViewById(R.id.handnote_page_date);
         size = findViewById(R.id.handnote_page_size_tv);
-
+button=findViewById(R.id.button);
         date.setText("97");
         size.setText("15");
         name.setText(handNote.getName());
@@ -61,9 +66,10 @@ public class HandNotePageActivity extends AppCompatActivity {
 
 
         name.setTypeface(typeface);
-        university.setTypeface(typeface);
-        date.setTypeface(typeface);
-        size.setTypeface(typeface);
+        university.setTypeface(typefaceLight);
+        date.setTypeface(typefaceLight);
+        size.setTypeface(typefaceLight);
+        button.setTypeface(typeface);
         teacher_name.setTypeface(typeface);
     }
 
