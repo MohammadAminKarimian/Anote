@@ -6,13 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccountPage.AccountFragment">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/account_toolbar_appbarlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/account_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -22,6 +22,6 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:background="@android:color/white"/>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 </FrameLayout>

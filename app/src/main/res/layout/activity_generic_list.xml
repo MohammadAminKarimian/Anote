@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -24,7 +24,7 @@
                 android:src="@drawable/ic_search_black_24dp"
                 android:background="@android:color/white"/>
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fields_list_search_bar"
                 android:layout_width="match_parent"
                 android:layout_marginStart="32dp"
@@ -34,7 +34,7 @@
                 android:maxLines="1"
                 android:hint="جستجو..." />
         </RelativeLayout>
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/fields_list_suggestion_recycler_view"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

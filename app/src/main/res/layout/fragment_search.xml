@@ -11,18 +11,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/white"
                 android:elevation="4dp">
 
-                <android.support.v7.widget.SearchView
+                <androidx.appcompat.widget.SearchView
                     android:id="@+id/search_fragment_search_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -33,11 +33,11 @@
                     app:iconifiedByDefault="false"
                     android:focusableInTouchMode="true">
 
-                </android.support.v7.widget.SearchView>
+                </androidx.appcompat.widget.SearchView>
 
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/search_fragment_recycler_view_history"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/search_fragment_recycler_view_suggestions"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

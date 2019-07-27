@@ -1,9 +1,9 @@
 package com.example.anote.CategoryPage.HandNoteList;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.anote.Adapters.CategoryHandNoteListAdapter;
 import com.example.anote.MainActivity;
