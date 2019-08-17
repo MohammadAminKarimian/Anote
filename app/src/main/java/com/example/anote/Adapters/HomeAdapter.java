@@ -76,7 +76,7 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
     static class myViewHolder extends RecyclerView.ViewHolder {
 
         Typeface nameTypeFace;
-        CardView cardView;
+        View cardView;
         View view;
 //        Chip university;
         TextView name, teacher_name;

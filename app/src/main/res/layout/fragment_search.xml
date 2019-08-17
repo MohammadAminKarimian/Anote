@@ -26,12 +26,12 @@
                     android:id="@+id/search_fragment_search_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:queryBackground="@null"
-                    app:submitBackground="@null"
-                    app:defaultQueryHint="جستجو"
                     android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:defaultQueryHint="جستجو"
                     app:iconifiedByDefault="false"
-                    android:focusableInTouchMode="true">
+                    app:queryBackground="@null"
+                    app:submitBackground="@null">
 
                 </androidx.appcompat.widget.SearchView>
 
@@ -42,8 +42,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/grey_10">
+            android:orientation="vertical">
 
             <ProgressBar
                 android:id="@+id/progress_bar"
@@ -64,16 +63,9 @@
                     android:id="@+id/search_fragment_recycler_view_history"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/background_grey"
                     android:cacheColorHint="#0000"
                     android:scrollbars="none"
                     android:scrollingCache="true" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/overlay_dark_20" />
 
             </LinearLayout>
 
@@ -88,22 +80,22 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No result"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:textColor="@color/grey_40"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No result"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Try input more general keyword"
-                android:gravity="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/grey_40" />
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Try input more general keyword"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                     />
 
             </LinearLayout>
 
@@ -120,17 +112,9 @@
                     android:id="@+id/search_fragment_recycler_view_suggestions"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/background_grey"
                     android:cacheColorHint="#0000"
                     android:scrollbars="none"
                     android:scrollingCache="true" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/overlay_dark_20" />
-
             </LinearLayout>
 
         </RelativeLayout>

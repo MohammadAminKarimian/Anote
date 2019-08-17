@@ -31,10 +31,6 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="false"
             android:paddingTop="15dp"
-            app:itemBackground="@color/transparent"
-            app:itemIconTint="@color/navigation_icon_state_list_color_light"
-            app:itemTextAppearance="@style/TextAppearance.Subhead.Bold"
-            app:itemTextColor="@color/navigation_text_state_list_color_light"
             app:menu="@menu/menu_navigation_drawer"/>
 
     </androidx.drawerlayout.widget.DrawerLayout>

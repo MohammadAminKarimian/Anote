@@ -65,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:text="No result"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:textColor="@color/grey_40"
                 android:textStyle="bold" />
 
             <TextView
@@ -75,7 +74,7 @@
                 android:text="Try input more general keyword"
                 android:gravity="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/grey_40" />
+                 />
 
         </LinearLayout>
 
@@ -92,16 +91,10 @@
                 android:id="@+id/fields_list_suggestion_recycler_view"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background_grey"
                 android:cacheColorHint="#0000"
                 android:scrollbars="none"
                 android:scrollingCache="true" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="@color/overlay_dark_20" />
 
         </LinearLayout>
 

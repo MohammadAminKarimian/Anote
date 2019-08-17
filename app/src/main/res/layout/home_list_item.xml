@@ -4,64 +4,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_list_item"
-    android:layout_width="150dp"
-    android:layout_height="wrap_content"
+    android:layout_width="144dp"
+    android:layout_height="184dp"
+    android:clickable="true"
+    android:focusable="true"
     android:layoutDirection="rtl"
     android:orientation="horizontal">
 
-    <androidx.cardview.widget.CardView
+
+    <RelativeLayout
         android:id="@+id/parent_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        android:background="@android:color/white"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardElevation="1dp">
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/home_list_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_list_item_Image"
+            android:layout_marginStart="16dp"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            tools:text="رشته" />
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/home_list_item_teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_list_item_name"
+            android:layout_marginStart="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            tools:text="استاد" />
+
+        <ImageView
+            android:id="@+id/home_list_item_Image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/ic_mathematical_icon" />
 
-            <TextView
-                android:id="@+id/home_list_item_name"
-                style="?attr/textAppearanceBody1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/home_list_item_Image"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:maxLines="1"
-                android:textColor="@android:color/black"
-                tools:text="رشته" />
-
-            <TextView
-                android:id="@+id/home_list_item_teacher_name"
-                style="?attr/textAppearanceBody2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/home_list_item_name"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="4dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textAlignment="center"
-                tools:text="استاد" />
-
-            <ImageView
-                android:id="@+id/home_list_item_Image"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
-                tools:src="@drawable/ic_mathematical_icon" />
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
+    </RelativeLayout>
 
 </LinearLayout>
 

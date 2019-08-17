@@ -107,7 +107,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        initToolbar(view);
+//        initToolbar(view);
 
         return view;
     }

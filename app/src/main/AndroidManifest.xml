@@ -11,12 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar"
+        android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".CategoryPage.HandNoteList.HandNoteList"></activity>
         <activity
             android:name=".HomePage.AddPage.SelectLists.AddPageSearchList"
-            android:parentActivityName=".HomePage.AddPage.AddPage"/>
+            android:parentActivityName=".HomePage.AddPage.AddPage" />
         <activity
             android:name=".HandNotePageActivity"
             android:parentActivityName=".MainActivity" />
@@ -25,15 +25,21 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".SplashActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"/>
+
     </application>
 
 </manifest>
