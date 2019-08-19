@@ -10,8 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/home_toolbar_appbarlayout"
@@ -46,6 +45,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/banner_example" />
 
@@ -67,6 +69,8 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -131,7 +135,10 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
-                                android:orientation="horizontal">
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+                                android:focusable="true">
 
                                 <TextView
                                     android:id="@+id/last_handnotes"
@@ -182,8 +189,8 @@
                         android:layout_height="232dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp">
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"

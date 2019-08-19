@@ -6,16 +6,19 @@
     android:id="@+id/home_list_item"
     android:layout_width="144dp"
     android:layout_height="184dp"
-    android:clickable="true"
-    android:focusable="true"
+
     android:layoutDirection="rtl"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:focusable="true">
 
 
     <RelativeLayout
         android:id="@+id/parent_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        >
 
         <TextView
             android:id="@+id/home_list_item_name"
@@ -24,8 +27,8 @@
             android:layout_below="@+id/home_list_item_Image"
             android:layout_marginStart="16dp"
             android:maxLines="1"
-            android:textSize="16sp"
             android:textColor="@android:color/black"
+            android:textSize="16sp"
             tools:text="رشته" />
 
         <TextView

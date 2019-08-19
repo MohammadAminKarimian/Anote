@@ -7,7 +7,7 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
-        <!--<item name="android:windowBackground">@android:color/white</item>-->
+        <item name="android:windowBackground">@color/windowsBackground</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -24,4 +24,5 @@
     </style>
 
 
+    <color name="windowsBackground">#ededee</color>
 </resources>
