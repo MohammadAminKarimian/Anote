@@ -33,18 +33,11 @@ public class CategoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_category, container, false);
 
-//        initToolbar(view);
         fetchData();
         CategoryAdapter adapter = initComponent(view);
         return view;
     }
 
-//    private void initToolbar(View view){
-//        AppCompatActivity parent = (AppCompatActivity) getActivity();
-//        Toolbar toolbar = view.findViewById(R.id.category_toolbar);
-//        parent.setSupportActionBar(toolbar);
-//        parent.getSupportActionBar().setTitle("ANOTE");
-//    }
 
     private CategoryAdapter initComponent(View view){
         AppCompatActivity parent = (AppCompatActivity) getActivity();

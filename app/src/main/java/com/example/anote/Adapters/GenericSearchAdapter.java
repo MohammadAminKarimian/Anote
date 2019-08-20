@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.anote.FontUtils;
 import com.example.anote.R;
 
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class GenericSearchAdapter extends RecyclerView.Adapter<GenericSearchAdap
     public void onBindViewHolder(@NonNull final myViewHolder myViewHolder, final int i) {
         final String str = dataUsage.get(i);
         myViewHolder.name.setText(str);
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
 
         myViewHolder.view.setOnClickListener(new View.OnClickListener() {
             @Override

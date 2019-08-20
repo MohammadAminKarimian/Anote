@@ -2,64 +2,61 @@ package com.example.anote.HomePage.AddPage;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.anote.FontUtils;
 import com.example.anote.HomePage.AddPage.SelectLists.AddPageSearchList;
 import com.example.anote.R;
 
 public class AddPage extends AppCompatActivity {
 
     View lyt_field, lyt_lesson, lyt_teacher, lyt_university;
-    TextView selected_field, selected_lesson, selected_teacher, selected_university,
-            uploadFile, university, field, lessen, teacher;
+    TextView selected_field, selected_lesson, selected_teacher, name_title, selected_university,
+            uploadFile, university, field, lessen, teacher, type_title;
+    RadioGroup radioGroup;
+    RadioButton general_lesson, private_lesson;
     Button uploadFileBtn, sendBtn;
-    Typeface typeface;
+    EditText name_input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_page);
-        typeface = Typeface.createFromAsset(getAssets(),
-                "fonts/IRANSansMobile(FaNum)_Light.ttf");
+
         initToolbar();
         initialization();
-//        if(getIntent().getStringExtra("type") != null){
-//            switch (getIntent().getStringExtra("type")){
-//                case "Field":
-//                    selected_field.setText(getIntent().getStringExtra("field_name"));break;
-//                case "University":
-//                    selected_university.setText(getIntent().getStringExtra("university_name"));break;
-//                case "Lesson":
-//                    selected_lesson.setText(getIntent().getStringExtra("lesson_name"));break;
-//                case "Teacher":
-//                    selected_teacher.setText(getIntent().getStringExtra("teacher_name"));break;
-//            }
-//        }
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
-        if(resultCode != 0){
-            switch(requestCode){
+        if (resultCode != 0) {
+            switch (requestCode) {
                 case 1:
-                    selected_field.setText(intent.getStringExtra("name"));break;
+                    selected_field.setText(intent.getStringExtra("name"));
+                    break;
                 case 2:
-                    selected_lesson.setText(intent.getStringExtra("name"));break;
+                    selected_lesson.setText(intent.getStringExtra("name"));
+                    break;
                 case 3:
-                    selected_teacher.setText(intent.getStringExtra("name"));break;
+                    selected_teacher.setText(intent.getStringExtra("name"));
+                    break;
                 case 4:
-                    selected_university.setText(intent.getStringExtra("name"));break;
+                    selected_university.setText(intent.getStringExtra("name"));
+                    break;
                 case Activity.RESULT_CANCELED:
 
             }
@@ -85,31 +82,42 @@ public class AddPage extends AppCompatActivity {
 
     private void initialization() {
         uploadFile = findViewById(R.id.add_page_upload_file_tv);
-        uploadFile.setTypeface(typeface);
-        university = findViewById(R.id.add_page_university_tv);
-        university.setTypeface(typeface);
-        field = findViewById(R.id.add_page_field_tv);
-        field.setTypeface(typeface);
-        lessen = findViewById(R.id.add_page_lesson_tv);
-        lessen.setTypeface(typeface);
-        teacher = findViewById(R.id.add_page_teacher_tv);
-        teacher.setTypeface(typeface);
+        uploadFile.setTypeface(FontUtils.getIranSans(getApplication()));
         uploadFileBtn = findViewById(R.id.add_page_upload_file_btn);
-        uploadFileBtn.setTypeface(typeface);
+        uploadFileBtn.setTypeface(FontUtils.getIranSansMedium(getApplication()));
+        name_title = findViewById(R.id.add_page_name_title);
+        name_title.setTypeface(FontUtils.getIranSansMedium(getApplication()));
+        name_input = findViewById(R.id.add_page_name_input_et);
+        name_input.setTypeface(FontUtils.getIranSans(getApplication()));
+        university = findViewById(R.id.add_page_university_tv);
+        university.setTypeface(FontUtils.getIranSans(getApplication()));
+        selected_university = findViewById(R.id.add_page_selected_university);
+        selected_university.setTypeface(FontUtils.getIranSansLight(getApplication()));
+        lessen = findViewById(R.id.add_page_lesson_tv);
+        lessen.setTypeface(FontUtils.getIranSans(getApplication()));
+        selected_lesson = findViewById(R.id.add_page_selected_lesson);
+        selected_lesson.setTypeface(FontUtils.getIranSansLight(getApplication()));
+        teacher = findViewById(R.id.add_page_teacher_tv);
+        teacher.setTypeface(FontUtils.getIranSans(getApplication()));
+        selected_teacher = findViewById(R.id.add_page_selected_teacher);
+        selected_teacher.setTypeface(FontUtils.getIranSansLight(getApplication()));
+//        type_title.findViewById(R.id.add_page_type_title);
+//        type_title.setTypeface(FontUtils.getIranSansMedium(getApplication()));
+        radioGroup=findViewById(R.id.add_page_type_radio_group);
+        general_lesson=findViewById(R.id.add_page_general_lesson_rg);
+        general_lesson.setTypeface(FontUtils.getIranSans(getApplication()));
+        private_lesson=findViewById(R.id.add_page_private_lesson_rg);
+        private_lesson.setTypeface(FontUtils.getIranSans(getApplication()));
+        field = findViewById(R.id.add_page_field_tv);
+        field.setTypeface(FontUtils.getIranSans(getApplication()));
+        selected_field = findViewById(R.id.add_page_selected_field);
+        selected_field.setTypeface(FontUtils.getIranSansLight(getApplication()));
         sendBtn = findViewById(R.id.add_page_send_btn);
-        sendBtn.setTypeface(typeface);
+        sendBtn.setTypeface(FontUtils.getIranSansMedium(getApplication()));
         lyt_field = findViewById(R.id.add_page_lyt_field);
         lyt_lesson = findViewById(R.id.add_page_lyt_lesson);
         lyt_teacher = findViewById(R.id.add_page_lyt_teacher);
         lyt_university = findViewById(R.id.add_page_lyt_university);
-        selected_field = findViewById(R.id.add_page_selected_field);
-        selected_field.setTypeface(typeface);
-        selected_lesson = findViewById(R.id.add_page_selected_lesson);
-        selected_lesson.setTypeface(typeface);
-        selected_teacher = findViewById(R.id.add_page_selected_teacher);
-        selected_teacher.setTypeface(typeface);
-        selected_university = findViewById(R.id.add_page_selected_university);
-        selected_university.setTypeface(typeface);
         lyt_field.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

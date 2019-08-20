@@ -1,15 +1,16 @@
 package com.example.anote.Adapters;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.anote.FontUtils;
 import com.example.anote.Objects.HandNote;
 import com.example.anote.R;
 
@@ -20,7 +21,7 @@ public class CategoryHandNoteListAdapter extends RecyclerView.Adapter<CategoryHa
     private ArrayList<HandNote> dataFeed;
     private Context context;
 
-    public CategoryHandNoteListAdapter(Context context, ArrayList<HandNote> dataFeed){
+    public CategoryHandNoteListAdapter(Context context, ArrayList<HandNote> dataFeed) {
         this.dataFeed = dataFeed;
         this.context = context;
     }
@@ -36,11 +37,11 @@ public class CategoryHandNoteListAdapter extends RecyclerView.Adapter<CategoryHa
     public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
         HandNote object = dataFeed.get(i);
         myViewHolder.name.setText(object.getName());
-        myViewHolder.name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
         myViewHolder.teacher_name.setText(object.getTeacher_name());
-        myViewHolder.teacher_name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.teacher_name.setTypeface(FontUtils.getIranSansLight(context));
         myViewHolder.university_name.setText(object.getUniversity());
-        myViewHolder.university_name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.university_name.setTypeface(FontUtils.getIranSansLight(context));
         myViewHolder.drawable.setImageResource(R.drawable.ic_database);
     }
 
@@ -53,12 +54,9 @@ public class CategoryHandNoteListAdapter extends RecyclerView.Adapter<CategoryHa
 
         TextView name, teacher_name, university_name;
         ImageView drawable;
-        Typeface typeFace;
 
-        myViewHolder(View itemView){
+        myViewHolder(View itemView) {
             super(itemView);
-            this.typeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/IRANSansMobile(FaNum).ttf");
             this.name = itemView.findViewById(R.id.category_handnote_list_item_name_TV);
             this.teacher_name = itemView.findViewById(R.id.category_handnote_list_item_teacher_name_TV);
             this.university_name = itemView.findViewById(R.id.category_handnote_list_item_university_name_TV);

@@ -7,386 +7,390 @@
     android:layoutDirection="rtl"
     tools:context=".HomePage.AddPage.AddPage">
 
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/addpage_toolbar_appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/add_page_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#F5F5F5"
+                android:elevation="4dp"
+                android:theme="@style/AppTheme"
+                app:popupTheme="@style/AppTheme"
+                app:title="جزوه جدید"
+                app:titleTextColor="@android:color/black">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_upload_file_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="@string/addpage_uploadfile_ET"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_page_upload_file_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@color/colorSecondary"
+                android:text="@string/addpage_choosefile_button"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="نام"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_page_name_title"
+
+                android:layout_marginBottom="8dp"
+                app:boxStrokeColor="@color/colorPrimaryDark"
+                app:boxStrokeWidth="1dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/add_page_name_input_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="مثال: ریاضی یک یا نمونه سوال ریاضی یک"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
 
         <LinearLayout
+            android:id="@+id/add_page_lyt_university"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="vertical">
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/addpage_toolbar_appbarlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:orientation="horizontal">
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/add_page_toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="#F5F5F5"
-                    android:elevation="4dp"
-                    android:theme="@style/AppTheme"
-                    app:popupTheme="@style/AppTheme"
-                    app:title="جزوه جدید"
-                    app:titleTextColor="@android:color/black">
-
-                </androidx.appcompat.widget.Toolbar>
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_upload_file_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/addpage_uploadfile_ET"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/add_page_upload_file_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@color/colorSecondary"
-                    android:text="@string/addpage_choosefile_button"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
+            <TextView
+                android:id="@+id/add_page_university_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="#E3E3E3" />
+                android:layout_weight="3"
+                android:text="@string/university"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/add_page_selected_university"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="دانشگاه چمران"
+                android:textColor="@color/colorPrimaryDark"
+                android:textDirection="ltr"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/add_page_name_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="نام"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-
-                    android:layout_below="@id/add_page_name_title"
-                    app:boxStrokeColor="@color/colorPrimaryDark"
-                    app:boxStrokeWidth="1dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/category_search_ET"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="مثال: ریاضی یک یا نمونه سوال ریاضی یک"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </RelativeLayout>
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="#E3E3E3" />
-
-            <LinearLayout
-                android:id="@+id/add_page_lyt_university"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_university_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="3"
-                    android:text="@string/university"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/add_page_selected_university"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
-                    android:text="دانشگاه چمران"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textDirection="ltr"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="0.5"
-                    android:padding="4dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:tint="@color/colorPrimaryDark" />
-            </LinearLayout>
-
-
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="#E3E3E3" />
-
-            <LinearLayout
-                android:id="@+id/add_page_lyt_lesson"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:focusable="true"
-
-                android:foreground="?android:attr/selectableItemBackground"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_lesson_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="3"
-                    android:text="@string/choose_lesson"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/add_page_selected_lesson"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
-                    android:text="انتخاب"
-                    android:textColor="@color/colorSecondary"
-                    android:textDirection="ltr"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="0.5"
-                    android:padding="4dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:tint="@color/colorSecondary" />
-                />
-            </LinearLayout>
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="#E3E3E3" />
-
-            <LinearLayout
-                android:id="@+id/add_page_lyt_teacher"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_teacher_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="3"
-                    android:text="@string/choose_teacher_tv"
-
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-
-                <TextView
-                    android:id="@+id/add_page_selected_teacher"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
-                    android:text="انتخاب"
-                    android:textColor="@color/colorSecondary"
-                    android:textDirection="ltr"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="0.5"
-                    android:padding="4dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:tint="@color/colorSecondary" />
-            </LinearLayout>
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_marginEnd="16dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:background="#E3E3E3" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_type_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="نوع درس"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp" />
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/add_page_type_title"
-                    android:layout_marginTop="8dp"
-                    android:checkedButton="@id/add_page_general_lesson_rg"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/add_page_private_lesson_rg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="اختصاصی"
-                        android:textSize="16sp" />
-
-                    <androidx.appcompat.widget.AppCompatRadioButton
-                        android:id="@+id/add_page_general_lesson_rg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="عمومی"
-                        android:textSize="16sp" />
-
-                </RadioGroup>
-
-
-            </RelativeLayout>
-
-            <View
-                style="@style/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:background="#E3E3E3" />
-
-            <LinearLayout
-                android:id="@+id/add_page_lyt_field"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/add_page_field_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="3"
-                    android:text="@string/field"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/add_page_selected_field"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
-                    android:text="علوم کامپیوتر"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textDirection="ltr"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="0.5"
-                    android:padding="4dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-                    android:tint="@color/colorPrimaryDark"
-
-                    />
-            </LinearLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.5"
+                android:padding="4dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:tint="@color/colorPrimaryDark" />
         </LinearLayout>
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/add_page_send_btn"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="32dp"
-            android:background="@color/colorSecondary"
-            android:text="ارسال"
-            android:textSize="14sp" />
-    </RelativeLayout>
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
+
+        <LinearLayout
+            android:id="@+id/add_page_lyt_lesson"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_lesson_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_weight="3"
+                android:text="@string/choose_lesson"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/add_page_selected_lesson"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="انتخاب"
+                android:textColor="@color/colorSecondary"
+                android:textDirection="ltr"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.5"
+                android:padding="4dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:tint="@color/colorSecondary" />
+            />
+        </LinearLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
+
+        <LinearLayout
+            android:id="@+id/add_page_lyt_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_teacher_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_weight="3"
+                android:text="@string/choose_teacher_tv"
+
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/add_page_selected_teacher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="انتخاب"
+                android:textColor="@color/colorSecondary"
+                android:textDirection="ltr"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.5"
+                android:padding="4dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:tint="@color/colorSecondary" />
+        </LinearLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="نوع درس"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/add_page_type_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_page_type_title"
+                android:layout_marginTop="8dp"
+                android:checkedButton="@id/add_page_general_lesson_rg"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/add_page_private_lesson_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="اختصاصی"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/add_page_general_lesson_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عمومی"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E3E3E3" />
+
+        <LinearLayout
+            android:id="@+id/add_page_lyt_field"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_page_field_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_weight="3"
+                android:text="@string/field"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/add_page_selected_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="علوم کامپیوتر"
+                android:textColor="@color/colorPrimaryDark"
+                android:textDirection="ltr"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.5"
+                android:padding="4dp"
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:tint="@color/colorPrimaryDark"
+
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_page_send_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorSecondary"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:text="ارسال"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

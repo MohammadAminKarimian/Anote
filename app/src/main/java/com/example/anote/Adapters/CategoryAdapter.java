@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.anote.FontUtils;
 import com.example.anote.R;
 
 import java.util.ArrayList;
@@ -28,7 +29,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
     public CategoryAdapter(Context context, ArrayList<String> dataFeed){
         this.dataFeed = dataFeed;
         this.context = context;
-//        this.dataUsage = new ArrayList<String>();
         this.dataUsage = dataFeed;
     }
 
@@ -56,7 +56,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
 
         myViewHolder.name.setText(str);
-        myViewHolder.name.setTypeface(myViewHolder.typeFace);
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
         myViewHolder.drawable.setColorFilter(randomAndroidColor);
         myViewHolder.lyt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,15 +87,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.myView
     }
 
     static class myViewHolder extends RecyclerView.ViewHolder{
-        Typeface typeFace;
         TextView name;
         ImageView drawable;
         View lyt_parent;
 
         myViewHolder(View itemView){
             super(itemView);
-            typeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/IRANSansMobile(FaNum).ttf");
             name = itemView.findViewById(R.id.category_list_item_TV);
             drawable = itemView.findViewById(R.id.category_list_item_IV);
             lyt_parent = itemView.findViewById(R.id.category_list_item_parentView);

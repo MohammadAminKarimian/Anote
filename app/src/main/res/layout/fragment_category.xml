@@ -10,31 +10,31 @@
     android:orientation="vertical">
 
     <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:id="@+id/category_toolbar_appbarlayout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="@android:color/white">-->
+    <!--android:id="@+id/category_toolbar_appbarlayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="@android:color/white">-->
 
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/category_toolbar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@android:color/white"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/category_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="@android:color/white"-->
+    <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
 
-            <!--<RelativeLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-                <!--<ImageView-->
-                    <!--android:id="@+id/imageView"-->
-                    <!--android:layout_width="100dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_centerInParent="true"-->
-                    <!--android:src="@drawable/logo_toolbar" />-->
-            <!--</RelativeLayout>-->
-        <!--</android.support.v7.widget.Toolbar>-->
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:src="@drawable/logo_toolbar" />-->
+    <!--</RelativeLayout>-->
+    <!--</android.support.v7.widget.Toolbar>-->
 
     <!--</android.support.design.widget.AppBarLayout>-->
 
@@ -52,8 +52,9 @@
             android:id="@+id/category_search_ET"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:drawableEnd="@drawable/ic_search_black_24dp"
             android:drawablePadding="8dp"
+            android:drawableTint="@color/colorSecondary"
             android:hint="جستجوی درس"
             android:imeOptions="actionSearch"
             android:maxLines="1"

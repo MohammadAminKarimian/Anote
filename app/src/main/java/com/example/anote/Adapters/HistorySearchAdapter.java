@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.anote.FontUtils;
 import com.example.anote.R;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class HistorySearchAdapter extends RecyclerView.Adapter<HistorySearchAdap
     public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
         String string = historyUsage.get(i);
         myViewHolder.name.setText(string);
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
     }
 
     @Override

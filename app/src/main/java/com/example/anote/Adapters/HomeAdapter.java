@@ -2,22 +2,23 @@ package com.example.anote.Adapters;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.anote.FontUtils;
 import com.example.anote.Objects.HandNote;
 import com.example.anote.R;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>{
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.myViewHolder> {
     private Context context;
     private ArrayList<HandNote> handNotes;
 
@@ -51,48 +52,43 @@ public class HomeAdapter  extends RecyclerView.Adapter<HomeAdapter.myViewHolder>
         int[] androidColors = context.getResources().getIntArray(R.array.androidcolors);
         int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
         myViewHolder.name.setText(object.getName());
-        myViewHolder.name.setTypeface(myViewHolder.nameTypeFace);
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
         myViewHolder.teacher_name.setText(object.getTeacher_name());
-        myViewHolder.teacher_name.setTypeface(myViewHolder.nameTypeFace);
+        myViewHolder.teacher_name.setTypeface(FontUtils.getIranSansLight(context));
         myViewHolder.image.setImageResource(object.getDrawable());
         myViewHolder.image.setColorFilter(randomAndroidColor);
-//        myViewHolder.university.setText(object.getUniversity());
-//        myViewHolder.university.setTypeface(myViewHolder.nameTypeFace);
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mOnItemClickListener != null)
+                if (mOnItemClickListener != null)
                     mOnItemClickListener.onItemClick(view, object, i);
             }
         });
     }
 
 
-
     @Override
     public int getItemCount() {
         return handNotes.size();
     }
+
     static class myViewHolder extends RecyclerView.ViewHolder {
 
         Typeface nameTypeFace;
         View cardView;
         View view;
-//        Chip university;
+        //        Chip university;
         TextView name, teacher_name;
         ImageView image;
 
-        myViewHolder(View itemView){
+        myViewHolder(View itemView) {
             super(itemView);
 
-            nameTypeFace=Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/IRANSansMobile(FaNum).ttf");
             this.name = itemView.findViewById(R.id.home_list_item_name);
             this.teacher_name = itemView.findViewById(R.id.home_list_item_teacher_name);
             this.image = itemView.findViewById(R.id.home_list_item_Image);
-            this.view=itemView.findViewById(R.id.home_list_item);
-            this.cardView=itemView.findViewById(R.id.parent_view);
-//            this.university=itemView.findViewById(R.id.university_chip);
+            this.view = itemView.findViewById(R.id.home_list_item);
+            this.cardView = itemView.findViewById(R.id.parent_view);
         }
 
     }

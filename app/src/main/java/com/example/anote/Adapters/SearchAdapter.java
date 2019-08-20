@@ -1,31 +1,31 @@
 package com.example.anote.Adapters;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.anote.FontUtils;
 import com.example.anote.Objects.HandNote;
 import com.example.anote.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHolder>  {
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHolder> {
 
     private ArrayList<HandNote> dataUsage, dataFeed;
     private Context context;
 
-    public SearchAdapter(Context context, ArrayList<HandNote> dataFeed){
+    public SearchAdapter(Context context, ArrayList<HandNote> dataFeed) {
         this.dataFeed = dataFeed;
         this.context = context;
         this.dataUsage = new ArrayList<HandNote>();
-//        this.dataUsage.addAll(dataFeed);
     }
 
     @NonNull
@@ -39,7 +39,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHold
     public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int i) {
         HandNote object = dataUsage.get(i);
         myViewHolder.name.setText(object.getName());
+        myViewHolder.name.setTypeface(FontUtils.getIranSans(context));
         myViewHolder.teacher_name.setText(object.getTeacher_name());
+        myViewHolder.teacher_name.setTypeface(FontUtils.getIranSansLight(context));
     }
 
     @Override
@@ -65,7 +67,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.myViewHold
 
         TextView name, teacher_name;
 
-        myViewHolder(View itemView){
+        myViewHolder(View itemView) {
             super(itemView);
             this.name = itemView.findViewById(R.id.search_list_item_name_txt);
             this.teacher_name = itemView.findViewById(R.id.search_list_item_type_txt);

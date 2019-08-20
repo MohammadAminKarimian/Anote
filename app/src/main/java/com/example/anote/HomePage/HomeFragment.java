@@ -31,9 +31,9 @@ public class HomeFragment extends Fragment {
     }
 
 
-    TextView inReading, lastHandNotes, public_lessons, inReading_more, lastHandNotes_more,
+    private TextView inReading, lastHandNotes, public_lessons, inReading_more, lastHandNotes_more,
             public_lessons_more;
-    RecyclerView inReadingRV, latestHandnotesRV, publicLessonsRV;
+    private RecyclerView inReadingRV, latestHandnotesRV, publicLessonsRV;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
