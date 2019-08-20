@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layoutDirection="rtl"
-    android:background="@color/colorPrimary"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:background="@color/colorPrimary"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:tint="@color/colorPrimaryDark"
-                android:layout_marginEnd="16dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_search_black_24dp"
-                android:background="@android:color/white"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fields_list_search_bar"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_marginStart="32dp"
                 android:layout_height="wrap_content"
-                android:textDirection="rtl"
-                android:layout_marginEnd="18dp"
-                android:maxLines="1"
-                android:hint="جستجو..." />
+                app:boxStrokeColor="@color/colorPrimaryDark"
+                app:boxStrokeWidth="1dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fields_list_search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_search_black_24dp"
+                    android:hint="جستجو..."
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
     </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -71,10 +73,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Try input more general keyword"
                 android:gravity="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                 />
+                android:text="Try input more general keyword"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
         </LinearLayout>
 
