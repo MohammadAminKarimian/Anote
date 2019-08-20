@@ -137,8 +137,8 @@
                                 android:layout_marginEnd="8dp"
                                 android:background="?attr/selectableItemBackground"
                                 android:clickable="true"
-                                android:orientation="horizontal"
-                                android:focusable="true">
+                                android:focusable="true"
+                                android:orientation="horizontal">
 
                                 <TextView
                                     android:id="@+id/last_handnotes"
@@ -247,8 +247,6 @@
                             </androidx.recyclerview.widget.RecyclerView>
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
-
-
                 </LinearLayout>
 
             </ScrollView>
