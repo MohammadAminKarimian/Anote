@@ -24,7 +24,7 @@ import com.example.anote.R;
 public class AddPage extends AppCompatActivity {
 
     View lyt_field, lyt_lesson, lyt_teacher, lyt_university;
-    TextView selected_field, selected_lesson, selected_teacher, name_title, selected_university,
+    TextView selected_field, selected_lesson, selected_teacher, selected_university,
             uploadFile, university, field, lessen, teacher, type_title;
     RadioGroup radioGroup;
     RadioButton general_lesson, private_lesson;
@@ -85,8 +85,6 @@ public class AddPage extends AppCompatActivity {
         uploadFile.setTypeface(FontUtils.getIranSans(getApplication()));
         uploadFileBtn = findViewById(R.id.add_page_upload_file_btn);
         uploadFileBtn.setTypeface(FontUtils.getIranSansMedium(getApplication()));
-        name_title = findViewById(R.id.add_page_name_title);
-        name_title.setTypeface(FontUtils.getIranSansMedium(getApplication()));
         name_input = findViewById(R.id.add_page_name_input_et);
         name_input.setTypeface(FontUtils.getIranSans(getApplication()));
         university = findViewById(R.id.add_page_university_tv);
